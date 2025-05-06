@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
@@ -15,47 +15,63 @@ body {
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
 }
 
 #titleInput {
     width: 100%;
     padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 1.2em;
-    text-align: center;
 }
 
-#exportExcel {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tab-button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.tab-button.active {
     background-color: #5cb85c;
     color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1em;
+    border-color: #5cb85c;
 }
 
-#exportExcel:hover {
-    background-color: #4cae4c;
+.tab-button.add-tab {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
 }
 
 .student-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 }
 
 .student-item {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 4px;
-    text-align: center;
+    padding: 10px;
     background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
 }
 
 .student-number {
@@ -70,39 +86,45 @@ h1 {
 }
 
 .rating-button {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 2px solid #aaa;
+    cursor: pointer;
+    background-color: white;
+    color: #333;
+    transition: all 0.2s ease-in-out;
+}
+
+.rating-button.selected[data-rating="1"] {
+    background-color: #554040;
+    color: white;
+}
+.rating-button.selected[data-rating="2"] {
+    background-color: #665040;
+    color: white;
+}
+.rating-button.selected[data-rating="3"] {
+    background-color: #406055;
+    color: white;
+}
+.rating-button.selected[data-rating="4"] {
+    background-color: #406570;
+    color: white;
+}
+.rating-button.selected[data-rating="5"] {
+    background-color: #555577;
+    color: white;
+}
+
+button {
+    padding: 8px 14px;
+    border: none;
+    background-color: #337ab7;
+    color: white;
     border-radius: 4px;
     cursor: pointer;
-    background-color: #eee;
 }
 
-.rating-button.selected-1 {
-    background-color: lightcoral;
-    color: white;
-    border-color: lightcoral;
-}
-
-.rating-button.selected-2 {
-    background-color: lightsalmon;
-    color: white;
-    border-color: lightsalmon;
-}
-
-.rating-button.selected-3 {
-    background-color: lightskyblue;
-    color: white;
-    border-color: lightskyblue;
-}
-
-.rating-button.selected-4 {
-    background-color: lightgreen;
-    color: white;
-    border-color: lightgreen;
-}
-
-.rating-button.selected-5 {
-    background-color: gold;
-    color: black;
-    border-color: gold;
+button:hover {
+    background-color: #286090;
 }

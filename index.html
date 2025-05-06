@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>生徒評価アプリ</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="container">
-        <h1><input type="text" id="titleInput" placeholder="タイトルを入力"></h1>
-        <button id="exportExcel">Excel出力</button>
+        <h1>生徒評価アプリ</h1>
 
-        <div class="student-list">
-            </div>
+        <input type="text" id="titleInput" placeholder="タイトルを入力（例：1学期技術）" />
+
+        <div class="controls">
+            <label for="ratingScale">評価段階:</label>
+            <select id="ratingScale">
+                <option value="5">5段階</option>
+                <option value="3">3段階</option>
+            </select>
+            <button id="saveButton">保存</button>
+            <button id="loadButton">読み込み</button>
+            <button id="exportExcel">Excel出力</button>
+        </div>
+
+        <div class="tabs" id="tabList"></div>
+
+        <div id="studentList" class="student-list"></div>
     </div>
 
     <script src="script.js"></script>
